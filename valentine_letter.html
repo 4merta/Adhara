@@ -58,25 +58,26 @@
         }
         .flower-left, .flower-right, .flower-mid {
             position: absolute;
-            width: 120px;
-            height: 120px;
-            font-size: 100px;
+            width: 100px;
+            height: 100px;
+            font-size: 80px;
             opacity: 0;
             z-index: -1;
             animation: fadeInRotate 2s forwards 6s;
         }
         .flower-left {
-            left: 5%;
-            bottom: 20%;
+            left: 10%;
+            bottom: 10%;
         }
         .flower-mid {
-            left: 39%;
-            bottom: 20%;
+            left: 50%;
+            bottom: 5%;
+            transform: translateX(-50%);
             animation-delay: 6.25s;
         }
         .flower-right {
-            right: 7%;
-            top: 64%;
+            right: 10%;
+            bottom: 10%;
             animation-delay: 6.5s;
         }
         
@@ -140,14 +141,25 @@
                 padding: 15px;
                 font-size: 14px;
             }
-            .flower-left, .flower-right {
-                width: 90px;
-                height: 90px;
-                font-size: 80px;
+            .flower-left, .flower-right, .flower-mid {
+                width: 70px;
+                height: 70px;
+                font-size: 60px;
             }
-            
+            .flower-left {
+                left: 15%;
+                bottom: 15%;
+            }
+            .flower-mid {
+                left: 50%;
+                bottom: 8%;
+            }
+            .flower-right {
+                right: 15%;
+                bottom: 15%;
+            }
             .heart {
-                font-size: 70px;
+                font-size: 60px;
             }
         }
     </style>
