@@ -13,7 +13,6 @@
             font-family: Arial, sans-serif;
             overflow: hidden;
         }
-
         .scene {
             position: relative;
             width: 100%;
@@ -25,7 +24,6 @@
             align-items: center;
             padding: 20px;
         }
-
         .envelope {
             position: absolute;
             width: 90%;
@@ -36,7 +34,6 @@
             animation: envelopeMove 4s forwards;
             z-index: 1;
         }
-
         .envelope-flap {
             position: absolute;
             width: 100%;
@@ -46,7 +43,6 @@
             clip-path: polygon(0 0, 50% 100%, 100% 0);
             animation: openFlap 2s forwards 1s;
         }
-
         .letter {
             position: fixed;
             width: 85%;
@@ -58,85 +54,49 @@
             opacity: 0;
             z-index: 2;
             animation: letterRise 3s forwards 3s;
+            text-align: center;
         }
-
         .flower-left, .flower-right {
             position: absolute;
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
+            font-size: 100px;
             opacity: 0;
-            z-index: 3;
-            font-size: 60px;
+            z-index: -1;
+            animation: fadeInRotate 2s forwards 6s;
         }
-
         .flower-left {
-            left: 10%;
-            transform: scaleX(-1);
-            animation: flowerLeftAppear 2s forwards 4.5s;
+            left: 5%;
+            bottom: 20%;
         }
-
+        
         .flower-right {
-            right: 10%;
-            animation: flowerRightAppear 2s forwards 4.5s;
+            right: 5%;
+            top: 20%;
+            animation-delay: 6.5s;
         }
-
-        .firework {
+        
+        .heart {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
+            font-size: 50px;
+            z-index: 2;
             opacity: 0;
-            box-shadow: 0 0 20px 5px currentColor;
-            top: 50%;
+            animation: bounceIn 1s forwards 7s;
+        }
+        .heart-top {
+            top: 5%;
             left: 50%;
-            transform-origin: center;
+            transform: translateX(-50%);
         }
-
-        .firework1 { 
-            background: #FFD700; 
-            color: #FFD700;
-            animation: firework1 2s forwards 3s; 
+        .heart-bottom {
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: 7.5s;
         }
-        .firework2 { 
-            background: #FF1493; 
-            color: #FF1493;
-            animation: firework2 2s forwards 3.3s; 
-        }
-        .firework3 { 
-            background: #00BFFF; 
-            color: #00BFFF;
-            animation: firework3 2s forwards 3.6s; 
-        }
-        .firework4 { 
-            background: #FF4500; 
-            color: #FF4500;
-            animation: firework4 2s forwards 3.9s; 
-        }
-        .firework5 { 
-            background: #9370DB; 
-            color: #9370DB;
-            animation: firework5 2s forwards 4.2s; 
-        }
-        .firework6 { 
-            background: #32CD32; 
-            color: #32CD32;
-            animation: firework6 2s forwards 4.5s; 
-        }
-        .firework7 { 
-            background: #FF69B4; 
-            color: #FF69B4;
-            animation: firework7 2s forwards 4.8s; 
-        }
-        .firework8 { 
-            background: #FFD700; 
-            color: #FFD700;
-            animation: firework8 2s forwards 5.1s; 
-        }
-
         @keyframes openFlap {
             to { transform: rotateX(180deg); }
         }
-
         @keyframes letterRise {
             0% {
                 opacity: 0;
@@ -151,212 +111,43 @@
                 transform: translateY(0) scale(1);
             }
         }
-
-        @keyframes envelopeMove {
-            to { transform: scale(0.6) translateZ(-200px); }
-        }
-
-        @keyframes flowerLeftAppear {
+        @keyframes fadeInRotate {
             0% {
                 opacity: 0;
-                transform: translateY(50px) rotate(-25deg) scale(0.5);
+                transform: rotate(-180deg) scale(0);
             }
-            60% {
-                transform: translateY(-10px) rotate(-25deg) scale(1.1);
+            100% {
+                opacity: 0.8;
+                transform: rotate(0) scale(1);
+            }
+        }
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) scale(0);
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateX(-50%) scale(1.2);
             }
             100% {
                 opacity: 1;
-                transform: translateY(0) rotate(-25deg) scale(1);
+                transform: translateX(-50%) scale(1);
             }
         }
-
-        @keyframes flowerRightAppear {
-            0% {
-                opacity: 0;
-                transform: translateY(50px) rotate(25deg) scale(0.5);
-            }
-            60% {
-                transform: translateY(-10px) rotate(25deg) scale(1.1);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) rotate(25deg) scale(1);
-            }
-        }
-
-        .firework1 { 
-            background: #FFD700; 
-            color: #FFD700;
-            animation: firework1 2s forwards 3s; 
-        }
-        .firework2 { 
-            background: #FF1493; 
-            color: #FF1493;
-            animation: firework2 2s forwards 3.3s; 
-        }
-        .firework3 { 
-            background: #00BFFF; 
-            color: #00BFFF;
-            animation: firework3 2s forwards 3.6s; 
-        }
-        .firework4 { 
-            background: #FF4500; 
-            color: #FF4500;
-            animation: firework4 2s forwards 3.9s; 
-        }
-        .firework5 { 
-            background: #9370DB; 
-            color: #9370DB;
-            animation: firework5 2s forwards 4.2s; 
-        }
-        .firework6 { 
-            background: #32CD32; 
-            color: #32CD32;
-            animation: firework6 2s forwards 4.5s; 
-        }
-        .firework7 { 
-            background: #FF69B4; 
-            color: #FF69B4;
-            animation: firework7 2s forwards 4.8s; 
-        }
-        .firework8 { 
-            background: #FFD700; 
-            color: #FFD700;
-            animation: firework8 2s forwards 5.1s; 
-        }
-
-        /* Animasi kembang api yang diperbaiki */
-        @keyframes firework1 {
-            0% { 
-                transform: translate(0, 0) scale(0.1); 
-                opacity: 0; 
-            }
-            20% { 
-                opacity: 1; 
-                transform: translate(-150px, -200px) scale(1);
-            }
-            100% { 
-                transform: translate(-150px, -200px) scale(0.1); 
-                opacity: 0; 
-            }
-        }
-
-        @keyframes firework2 {
-            0% { 
-                transform: translate(0, 0) scale(0.1); 
-                opacity: 0; 
-            }
-            20% { 
-                opacity: 1; 
-                transform: translate(150px, -200px) scale(1);
-            }
-            100% { 
-                transform: translate(150px, -200px) scale(0.1); 
-                opacity: 0; 
-            }
-        }
-
-        @keyframes firework3 {
-            0% { 
-                transform: translate(0, 0) scale(0.1); 
-                opacity: 0; 
-            }
-            20% { 
-                opacity: 1; 
-                transform: translate(-100px, -250px) scale(1);
-            }
-            100% { 
-                transform: translate(-100px, -250px) scale(0.1); 
-                opacity: 0; 
-            }
-        }
-
-        @keyframes firework4 {
-            0% { 
-                transform: translate(0, 0) scale(0.1); 
-                opacity: 0; 
-            }
-            20% { 
-                opacity: 1; 
-                transform: translate(100px, -250px) scale(1);
-            }
-            100% { 
-                transform: translate(100px, -250px) scale(0.1); 
-                opacity: 0; 
-            }
-        }
-
-        @keyframes firework5 {
-            0% { 
-                transform: translate(0, 0) scale(0.1); 
-                opacity: 0; 
-            }
-            20% { 
-                opacity: 1; 
-                transform: translate(-120px, -180px) scale(1);
-            }
-            100% { 
-                transform: translate(-120px, -180px) scale(0.1); 
-                opacity: 0; 
-            }
-        }
-
-        @keyframes firework6 {
-            0% { 
-                transform: translate(0, 0) scale(0.1); 
-                opacity: 0; 
-            }
-            20% { 
-                opacity: 1; 
-                transform: translate(120px, -180px) scale(1);
-            }
-            100% { 
-                transform: translate(120px, -180px) scale(0.1); 
-                opacity: 0; 
-            }
-        }
-
-        @keyframes firework7 {
-            0% { 
-                transform: translate(0, 0) scale(0.1); 
-                opacity: 0; 
-            }
-            20% { 
-                opacity: 1; 
-                transform: translate(-80px, -220px) scale(1);
-            }
-            100% { 
-                transform: translate(-80px, -220px) scale(0.1); 
-                opacity: 0; 
-            }
-        }
-
-        @keyframes firework8 {
-            0% { 
-                transform: translate(0, 0) scale(0.1); 
-                opacity: 0; 
-            }
-            20% { 
-                opacity: 1; 
-                transform: translate(80px, -220px) scale(1);
-            }
-            100% { 
-                transform: translate(80px, -220px) scale(0.1); 
-                opacity: 0; 
-            }
-        }
-
-
         @media (max-width: 480px) {
             .letter {
                 width: 75%;
                 padding: 15px;
                 font-size: 14px;
             }
-
             .flower-left, .flower-right {
-                width: 60px;
-                height: 60px;
+                width: 90px;
+                height: 90px;
+                font-size: 80px;
+            }
+            
+            .heart {
                 font-size: 40px;
             }
         }
@@ -377,14 +168,8 @@
         </div>
         <div class="flower-left">🌹</div>
         <div class="flower-right">🌹</div>
-        <div class="firework firework1"></div>
-        <div class="firework firework2"></div>
-        <div class="firework firework3"></div>
-        <div class="firework firework4"></div>
-        <div class="firework firework5"></div>
-        <div class="firework firework6"></div>
-        <div class="firework firework7"></div>
-        <div class="firework firework8"></div>
+        <div class="heart heart-top">❤️</div>
+        <div class="heart heart-bottom">❤️</div>
     </div>
 </body>
 </html>
