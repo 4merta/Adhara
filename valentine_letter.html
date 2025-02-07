@@ -56,7 +56,7 @@
             animation: letterRise 3s forwards 3s;
             text-align: center;
         }
-        .flower-left, .flower-right {
+        .flower-left, .flower-right, .flower-mid {
             position: absolute;
             width: 120px;
             height: 120px;
@@ -69,7 +69,11 @@
             left: 5%;
             bottom: 20%;
         }
-        
+        .flower-mid {
+            left: 39%;
+            bottom: 20%;
+            animation-delay: 6.25s;
+        }
         .flower-right {
             right: 7%;
             top: 64%;
@@ -162,6 +166,7 @@
             <p>Nih coklatnya.....🍫🍫🍫</p>
         </div>
         <div class="flower-left">🌹</div>
+        <div class="flower-mid">🌹</div>
         <div class="flower-right">🌹</div>
         <div class="heart heart-top">❤️</div>
     </div>
